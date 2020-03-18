@@ -1,0 +1,7 @@
+# Python related
+*.pyc
+.python-version
+
+# Data files
+*.txt
+*.pkl
