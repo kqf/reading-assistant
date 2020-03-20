@@ -1,5 +1,6 @@
 # Python related
 *.pyc
+*.egg-info/
 .python-version
 
 # Data files
