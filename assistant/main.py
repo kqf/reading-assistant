@@ -21,10 +21,7 @@ def valid(token):
     return token.is_alpha and not token.is_stop
 
 
-@click.command()
-@click.option("--infile", type=str, default="text.txt")
-@click.option("--dictionary", type=str, default="google-10000-english.txt")
-def main(infile, dictionary):
+def find(infile, dictionary):
     nlp = spacy.load("en_core_web_sm")
     with open(infile) as f:
         doc = nlp(f.read())
@@ -38,6 +35,13 @@ def main(infile, dictionary):
 
     print("Tokens:")
     print(list([t.lemma_ for t in doc if t._.oov and valid(t)]))
+
+
+@click.command()
+@click.option("--infile", type=str, default="text.txt")
+@click.option("--dictionary", type=str, default="google-10000-english.txt")
+def main(infile, dictionary):
+    find(infile, dictionary)
 
 
 if __name__ == '__main__':
