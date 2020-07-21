@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'bob-find=assistant.main:main',
+            'bob=assistant.main:main',
         ],
     },
 )
