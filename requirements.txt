@@ -2,3 +2,13 @@ pytest
 spacy
 click
 multimethod
+Flask
+Flask-Bootstrap
+Flask-Login
+Flask-SQLAlchemy
+Flask-WTF
+Jinja2
+MarkupSafe
+SQLAlchemy
+WTForms
+Werkzeug
