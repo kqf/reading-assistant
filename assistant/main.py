@@ -19,7 +19,7 @@ def find(infile, dictionary):
 
 @main.command()
 def serve():
-    app = create_app('development')
+    app = create_app()
     with app.app_context():
         db.create_all()
         if User.query.filter_by(username='john').first() is None:
