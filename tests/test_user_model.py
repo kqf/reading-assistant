@@ -5,7 +5,7 @@ from app.models import User
 
 @pytest.fixture
 def app():
-    app = create_app('testing')
+    app = create_app()
     app_ctx = app.app_context()
     app_ctx.push()
     db.create_all()
