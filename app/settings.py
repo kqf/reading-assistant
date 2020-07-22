@@ -1,6 +1,8 @@
-import os
+from environs import Env
 
-DEBUG = True
-SECRET_KEY = 'password'
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(
-    os.path.dirname(__file__), '../data-dev.sqlite3')
+env = Env()
+env.read_env()
+
+DEBUG = env("DEBUG")
+SECRET_KEY = env("SECRET_KEY")
+SQLALCHEMY_DATABASE_URI = env("SQLALCHEMY_DATABASE_URI")

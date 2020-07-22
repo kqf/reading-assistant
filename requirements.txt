@@ -12,3 +12,4 @@ MarkupSafe
 SQLAlchemy
 WTForms
 Werkzeug
+environs
