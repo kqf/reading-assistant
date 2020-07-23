@@ -1,1 +1,1 @@
-web: pip install . && bob serve
+web: python assistant/main.py serve
