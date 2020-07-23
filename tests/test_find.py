@@ -8,7 +8,7 @@ from assistant.find import find
 def dictionary():
     with tempfile.NamedTemporaryFile("w", delete=False) as f:
         f.write("day\nplay\nboy\nno\nwork")
-        yield f.name
+    yield f.name
     os.unlink(f.name)
 
 
@@ -16,7 +16,7 @@ def dictionary():
 def text():
     with tempfile.NamedTemporaryFile("w", delete=False) as f:
         f.write("All work and no play makes Jack a dull boy")
-        yield f.name
+    yield f.name
     os.unlink(f.name)
 
 
