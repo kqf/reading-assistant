@@ -2,6 +2,7 @@ import click
 
 from app import create_app, db
 from app.models import User
+from app.settings import SQLALCHEMY_DATABASE_URI
 from assistant.find import find as bfind
 
 
@@ -19,6 +20,7 @@ def find(infile, dictionary):
 
 @main.command()
 def serve():
+    print("Database path", SQLALCHEMY_DATABASE_URI)
     app = create_app()
     with app.app_context():
         db.create_all()
