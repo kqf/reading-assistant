@@ -13,3 +13,4 @@ SQLAlchemy
 WTForms
 Werkzeug
 environs
+gunicorn

@@ -1,1 +1,1 @@
-web: python assistant/main.py serve
+web: gunicorn assistant.main:serve
