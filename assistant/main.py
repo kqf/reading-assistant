@@ -1,8 +1,8 @@
-import click
+# import click
 
 from app import create_app, db
 from app.models import User
-from assistant.find import find as bfind
+# from assistant.find import find as bfind
 
 
 def main(*args, **kwargs):
@@ -14,19 +14,19 @@ def main(*args, **kwargs):
     app.run()
 
 
-@click.group()
-def cli():
-    pass
+# @click.group()
+# def cli():
+#     pass
 
 
-@cli.command()
-@click.option("--infile", type=str, default="text.txt")
-@click.option("--dictionary", type=str, default="google-10000-english.txt")
-def find(infile, dictionary):
-    bfind(infile, dictionary)
+# @cli.command()
+# @click.option("--infile", type=str, default="text.txt")
+# @click.option("--dictionary", type=str, default="google-10000-english.txt")
+# def find(infile, dictionary):
+#     bfind(infile, dictionary)
 
 
-@cli.command()
+# @cli.command()
 def serve():
     main()
 
