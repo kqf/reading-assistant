@@ -26,7 +26,7 @@ def find(infile, dictionary):
     bfind(infile, dictionary)
 
 
-@cli.command()
+# @cli.command()
 def serve():
     main()
 
