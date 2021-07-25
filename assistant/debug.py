@@ -9,6 +9,7 @@ def hello_world():
 
 
 def main():
+    print("Entering the main loop")
     app.run()
 
 
