@@ -1,1 +1,1 @@
-web: gunicorn assistant.main:serve --bind 0.0.0.0:${PORT}
+web: gunicorn assistant.debug:main --bind 0.0.0.0:${PORT}
