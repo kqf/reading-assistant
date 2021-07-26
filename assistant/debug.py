@@ -9,7 +9,8 @@ def hello_world():
 
 
 def main():
-    app.run()
+    print("Entering the main loop")
+    app.run(host='0.0.0.0')
 
 
 if __name__ == '__main__':
