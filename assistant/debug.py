@@ -8,8 +8,7 @@ def hello_world():
     return "<p>Hello, World!</p>"
 
 
-def main(first, second):
-    print("Entering the main loop")
+def main():
     app.run()
 
 
