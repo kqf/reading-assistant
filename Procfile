@@ -1,1 +1,1 @@
-web: assistant.debug:main
+web: gunicorn assistant.debug:main
