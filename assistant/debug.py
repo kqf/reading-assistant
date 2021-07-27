@@ -8,9 +8,9 @@ def hello_world():
     return "<p>Hello, World!</p>"
 
 
-def main():
+def main(first, second):
     print("Entering the main loop")
-    app.run(host='0.0.0.0', port=81)
+    app.run()
 
 
 if __name__ == '__main__':
