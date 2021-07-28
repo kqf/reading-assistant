@@ -8,7 +8,11 @@ from app.models import User
 def build():
     app = create_app()
     with app.app_context():
-        db.create_all()
+        try:
+            db.create_all()
+        except:  # noqa
+            pass
+
         if User.query.filter_by(username='john').first() is None:
             User.register('john', 'cat')
     return app
