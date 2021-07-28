@@ -1,1 +1,1 @@
-web: gunicorn 'assistant.main:main()' --bind 0.0.0.0:${PORT}
+web: gunicorn 'assistant.main:build()' --bind 0.0.0.0:${PORT}

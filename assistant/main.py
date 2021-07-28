@@ -5,7 +5,7 @@ from app.models import User
 # from assistant.find import find as bfind
 
 
-def main():
+def build():
     app = create_app()
     with app.app_context():
         db.create_all()
@@ -26,11 +26,10 @@ def main():
 #     bfind(infile, dictionary)
 
 
-# @cli.command()
-def serve():
-    main()
+def main():
+    app = build()
+    app.run()
 
 
 if __name__ == '__main__':
-    app = main()
-    app.run()
+    main()
