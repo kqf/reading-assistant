@@ -1,17 +1,11 @@
 # import click
 
-from app import create_app, db
-from app.models import User
+from app import create_app
 # from assistant.find import find as bfind
 
 
 def build():
     app = create_app()
-    with app.app_context():
-        db.create_all()
-
-        if User.query.filter_by(username='john').first() is None:
-            User.register('john', 'cat')
     return app
 
 
