@@ -4,11 +4,6 @@ from app import create_app
 # from assistant.find import find as bfind
 
 
-def build():
-    app = create_app()
-    return app
-
-
 # @click.group()
 # def cli():
 #     pass
@@ -22,7 +17,7 @@ def build():
 
 
 def main():
-    app = build()
+    app = create_app()
     app.run()
 
 
