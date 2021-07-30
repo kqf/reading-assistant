@@ -29,7 +29,7 @@ def index():
     return render_template('index.html')
 
 
-@main.route('/protected')
+@main.route('/scan')
 @login_required
-def protected():
-    return render_template('protected.html')
+def scan():
+    return render_template('scan.html')
