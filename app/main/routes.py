@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user
 from ..models import User
 from . import main
-from .forms import LoginForm
+from .forms import LoginForm, InputForm
 
 
 @main.route('/login', methods=['GET', 'POST'])
@@ -32,4 +32,12 @@ def index():
 @main.route('/scan')
 @login_required
 def scan():
-    return render_template('scan.html')
+    text_input, suggestions = InputForm(), None
+    if text_input.validate_on_submit():
+        # TODO: Add the logic here
+        pass
+    return render_template(
+        'scan.html',
+        text_input=text_input,
+        suggestions=suggestions
+    )
