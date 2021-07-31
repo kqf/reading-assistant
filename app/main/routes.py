@@ -33,13 +33,12 @@ def index():
 @login_required
 def scan():
     text_input, words = InputForm(), SuggestionForm()
-    choices = ("one", "two", "three")
-
-    words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
+    words.suggestions.choices = []
 
     if text_input.validate_on_submit():
         # TODO: Fix the logic here
-        pass
+        choices = ("one", "two", "three")
+        words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
     return render_template(
         'scan.html',
