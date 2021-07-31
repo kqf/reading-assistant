@@ -1,6 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import SelectMultipleField
 from wtforms.validators import Required, Length, DataRequired
+
+from wtforms.widgets import CheckboxInput, ListWidget
 
 
 class LoginForm(FlaskForm):
@@ -14,3 +17,11 @@ class InputForm(FlaskForm):
     translation = StringField('', validators=[DataRequired()],
                               render_kw={'autofocus': True})
     submit = SubmitField('submit')
+
+
+class SuggestionForm(FlaskForm):
+    suggestions = SelectMultipleField(
+        'OOV words',
+        option_widget=CheckboxInput(),
+        widget=ListWidget(prefix_label=False)
+    )
