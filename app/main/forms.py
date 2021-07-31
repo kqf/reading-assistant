@@ -3,6 +3,8 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms import SelectMultipleField
 from wtforms.validators import Required, Length, DataRequired
 
+from wtforms.widgets import CheckboxInput, ListWidget
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[Required(), Length(1, 16)])
@@ -18,6 +20,8 @@ class InputForm(FlaskForm):
 
 
 class SuggestionForm(FlaskForm):
-    def __init__(self, choices, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.suggestions = SelectMultipleField("OOV words", choices=choices)
+    suggestions = SelectMultipleField(
+        'OOV words',
+        option_widget=CheckboxInput(),
+        widget=ListWidget(prefix_label=False)
+    )
