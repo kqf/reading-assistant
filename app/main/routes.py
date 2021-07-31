@@ -29,7 +29,7 @@ def index():
     return render_template('index.html')
 
 
-@main.route('/scan')
+@main.route('/scan', methods=['GET', 'POST'])
 @login_required
 def scan():
     text_input, suggestions = InputForm(), None
