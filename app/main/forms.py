@@ -16,5 +16,8 @@ class InputForm(FlaskForm):
                               render_kw={'autofocus': True})
     submit = SubmitField('submit')
 
+
 class SuggestionForm(FlaskForm):
-    suggestions = SelectMultipleField("OOV words")
+    def __init__(self, choices, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.suggestions = SelectMultipleField("OOV words", choices=choices)
