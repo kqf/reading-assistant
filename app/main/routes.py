@@ -32,10 +32,10 @@ def index():
 @main.route('/scan', methods=['GET', 'POST'])
 @login_required
 def scan():
-    text_input, suggestions = InputForm(), SuggestionForm()
+    text_input, words = InputForm(), SuggestionForm()
     choices = ("one", "two", "three")
 
-    suggestions.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
+    words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
     if text_input.validate_on_submit():
         # TODO: Fix the logic here
@@ -44,5 +44,5 @@ def scan():
     return render_template(
         'scan.html',
         text_input=text_input,
-        suggestions=suggestions
+        words=words
     )
