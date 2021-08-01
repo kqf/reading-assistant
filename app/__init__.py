@@ -1,4 +1,6 @@
+import requests
 from pathlib import Path
+
 from app import settings
 from flask import Flask
 from flask_bootstrap import Bootstrap
@@ -11,8 +13,12 @@ lm = LoginManager()
 lm.login_view = 'main.login'
 
 
-def download():
-    pass
+def download(url, ofile):
+    r = requests.get(url)
+    opath = Path(ofile)
+    opath.parent.mkdir(parents=True, exist_ok=True)
+    with opath.open("w") as f:
+        f.write(r.text)
 
 
 def create_app():
