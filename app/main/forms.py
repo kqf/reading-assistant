@@ -1,14 +1,15 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms import SelectMultipleField
-from wtforms.validators import Required, Length, DataRequired
+from wtforms.validators import Length, DataRequired
 
 from wtforms.widgets import CheckboxInput, ListWidget
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[Required(), Length(1, 16)])
-    password = PasswordField('Password', validators=[Required()])
+    username = StringField('Username',
+                           validators=[DataRequired(), Length(1, 16)])
+    password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember me')
     submit = SubmitField('Submit')
 
