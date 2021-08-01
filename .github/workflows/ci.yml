@@ -29,8 +29,7 @@ jobs:
 
     - name: Test
       run: |
-        echo "Skip coverage"
-        pytest --cov=detection -m "not onlylocal" tests/
+        pytest --cov=app
 
     - name: Lint
       run: |
