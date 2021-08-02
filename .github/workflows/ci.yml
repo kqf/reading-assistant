@@ -27,6 +27,10 @@ jobs:
         pip install -r requirements.txt
         pip install -e .
 
+    - name: Download spacy dictionaries
+      run: |
+         python -m spacy download en_core_web_sm
+
     - name: Test
       run: |
         pytest
