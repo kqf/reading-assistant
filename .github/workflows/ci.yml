@@ -33,10 +33,10 @@ jobs:
 
     - name: Test environment variables
       run: |
-          echo "$This is the debug {DEBUG} variable."
-          echo "$This is the debug {SECRET_KEY} variable."
-          echo "$This is the debug {SQLALCHEMY_DATABASE_URI} variable."
-          echo "$This is the debug {DEFAULT_VOCABULARY_URL} variable."
+          echo "This is the debug ${DEBUG} variable."
+          echo "This is the debug ${SECRET_KEY} variable."
+          echo "This is the debug ${SQLALCHEMY_DATABASE_URI} variable."
+          echo "This is the debug ${DEFAULT_VOCABULARY_URL} variable."
 
     - name: Test
       run: |
