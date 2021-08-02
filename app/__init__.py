@@ -29,6 +29,7 @@ def create_app():
     app.config["DEBUG"] = settings.DEBUG
     app.config["SECRET_KEY"] = settings.SECRET_KEY
     app.config["SQLALCHEMY_DATABASE_URI"] = settings.SQLALCHEMY_DATABASE_URI
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     # initialize extensions
     bootstrap.init_app(app)
