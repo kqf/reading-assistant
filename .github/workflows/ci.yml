@@ -27,6 +27,17 @@ jobs:
         pip install -r requirements.txt
         pip install -e .
 
+    - name: Download spacy dictionaries
+      run: |
+         python -m spacy download en_core_web_sm
+
+    - name: Test environment variables
+      run: |
+          echo "This is the debug ${secrets.DEBUG} variable."
+          echo "This is the debug ${secrets.SECRET_KEY} variable."
+          echo "This is the debug ${secrets.SQLALCHEMY_DATABASE_URI} variable."
+          echo "This is the debug ${secrets.DEFAULT_VOCABULARY_URL} variable."
+
     - name: Test
       run: |
         pytest
