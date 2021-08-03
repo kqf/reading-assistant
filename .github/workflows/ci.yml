@@ -14,7 +14,7 @@ jobs:
       DAY_OF_WEEK: Mon
       DEBUG: ${{ secrets.DEBUG }}
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      SQLALCHEMY_DATABASE_URI: ${{ secrets.SQLALCHEMY_DATABASE_URI }}
+      SQLALCHEMY_DATABASE_URI: sqlite:///data-dev.sqlite3
       DEFAULT_VOCABULARY_URL: ${{ secrets.DEFAULT_VOCABULARY_URL }}
 
     steps:
