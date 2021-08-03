@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DAY_OF_WEEK: Mon
-      DEBUG: secrets.DEBUG
-      SECRET_KEY: secrets.SECRET_KEY
-      SQLALCHEMY_DATABASE_URI: secrets.SQLALCHEMY_DATABASE_URI
-      DEFAULT_VOCABULARY_URL: secrets.DEFAULT_VOCABULARY_URL
+      DEBUG: ${{ secrets.DEBUG }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      SQLALCHEMY_DATABASE_URI: ${{ secrets.SQLALCHEMY_DATABASE_URI }}
+      DEFAULT_VOCABULARY_URL: ${{ secrets.DEFAULT_VOCABULARY_URL }}
 
     steps:
     - name: Get the source code
@@ -39,10 +39,10 @@ jobs:
 
     - name: Test environment variables
       run: |
-          echo "This is the debug ${secrets.DEBUG} variable."
-          echo "This is the debug ${secrets.SECRET_KEY} variable."
-          echo "This is the debug ${secrets.SQLALCHEMY_DATABASE_URI} variable."
-          echo "This is the debug ${secrets.DEFAULT_VOCABULARY_URL} variable."
+          echo "This is the debug ${{ secrets.DEBUG }} variable."
+          echo "This is the debug ${{ secrets.SECRET_KEY }} variable."
+          echo "This is the debug ${{ secrets.SQLALCHEMY_DATABASE_URI }} variable."
+          echo "This is the debug ${{ secrets.DEFAULT_VOCABULARY_URL }} variable."
 
     - name: Test
       run: |
