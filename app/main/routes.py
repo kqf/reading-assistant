@@ -3,6 +3,7 @@ from flask_login import login_required, login_user, logout_user
 from ..models import User
 from . import main
 from .forms import LoginForm, InputForm, SuggestionForm
+from app.settings import DEFAULT_VOCABULARY
 
 
 @main.route('/login', methods=['GET', 'POST'])
@@ -36,8 +37,8 @@ def scan():
     words.suggestions.choices = []
 
     if text_input.validate_on_submit():
-        # TODO: Fix the logic here
-        choices = ("one", "two", "three")
+        with open(DEFAULT_VOCABULARY) as f:
+            choices = f.readlines()[:5]
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
     return render_template(
