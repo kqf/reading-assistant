@@ -2,4 +2,5 @@ from flask import Blueprint
 
 main = Blueprint('main', __name__)
 
-from . import routes
+# TODO: Fix the relative imports
+from . import routes  # noqa
