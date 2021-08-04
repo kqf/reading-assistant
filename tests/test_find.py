@@ -22,8 +22,8 @@ def text():
 
 @pytest.mark.parametrize("only_nouns, expected", [
     (True, ['Jack']),
-    (False,  ['Jack', 'make', 'Jack', 'dull']),
+    (False, ['Jack', 'make', 'Jack', 'dull']),
 ])
 def test_assistant(text, dictionary, only_nouns, expected):
     res = find(text, dictionary, only_nouns=only_nouns)
-    assert res == expected
+    assert set(res) == set(expected)
