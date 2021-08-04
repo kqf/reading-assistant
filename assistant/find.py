@@ -26,7 +26,13 @@ def find(infile, dictionary, only_nouns=True):
         doc = nlp(f.read())
 
     is_oov = Vocabulary(dictionary)
+
+    if spacy.tokens.Span.has_extension("oov"):
+        spacy.tokens.Span.remove_extension("oov")
     spacy.tokens.Span.set_extension("oov", getter=is_oov)
+
+    if spacy.tokens.Token.has_extension("oov"):
+        spacy.tokens.Token.remove_extension("oov")
     spacy.tokens.Token.set_extension("oov", getter=is_oov)
 
     nouns = list(set([span.text for span in doc.noun_chunks if span._.oov]))
