@@ -20,7 +20,7 @@ def text():
     os.unlink(f.name)
 
 
-@pytest.mark.skip("TODO: fix the spacy version mismatch later")
+# @pytest.mark.skip("TODO: fix the spacy version mismatch later")
 @pytest.mark.parametrize("only_nouns, expected", [
     (True, ['Jack']),
     (False, ['Jack', 'make', 'Jack', 'dull']),

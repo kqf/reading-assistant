@@ -1,5 +1,4 @@
 pytest
-spacy
 click
 multimethod
 Flask
@@ -14,3 +13,4 @@ WTForms
 Werkzeug
 environs
 gunicorn
+spacy==2.2.4
