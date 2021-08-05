@@ -20,10 +20,9 @@ def valid(token):
     return token.is_alpha and not token.is_stop
 
 
-def find(infile, dictionary, only_nouns=True):
+def find(text, dictionary, only_nouns=True):
     nlp = spacy.load("en_core_web_sm")
-    with open(infile) as f:
-        doc = nlp(f.read())
+    doc = nlp(text)
 
     is_oov = Vocabulary(dictionary)
 
