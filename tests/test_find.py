@@ -14,10 +14,7 @@ def dictionary():
 
 @pytest.fixture
 def text():
-    with tempfile.NamedTemporaryFile("w", delete=False) as f:
-        f.write("All work and no play makes Jack a dull boy")
-    yield f.name
-    os.unlink(f.name)
+    return "All work and no play makes Jack a dull boy"
 
 
 # @pytest.mark.skip("TODO: fix the spacy version mismatch later")
