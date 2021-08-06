@@ -1,4 +1,3 @@
-import tempfile
 from flask import render_template, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user
 from ..models import User
