@@ -26,3 +26,4 @@ class SuggestionForm(FlaskForm):
         option_widget=CheckboxInput(),
         widget=ListWidget(prefix_label=False)
     )
+    filters = SubmitField('filter')
