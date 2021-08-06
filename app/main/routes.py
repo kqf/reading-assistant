@@ -39,11 +39,12 @@ def scan():
     words.suggestions.choices = []
 
     if text_input.validate_on_submit():
-        with tempfile.NamedTemporaryFile("w", delete=False) as f:
-            print(text_input.translation.data)
-            f.write(text_input.translation.data)
-            choices = find(f.name, DEFAULT_VOCABULARY, only_nouns=False)
-            print(choices)
+        choices = find(
+            text_input.translation.data,
+            DEFAULT_VOCABULARY,
+            only_nouns=False
+        )
+        print(choices)
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
     return render_template(
