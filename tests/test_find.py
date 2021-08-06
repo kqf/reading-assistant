@@ -17,7 +17,6 @@ def text():
     return "All work and no play makes Jack a dull boy"
 
 
-# @pytest.mark.skip("TODO: fix the spacy version mismatch later")
 @pytest.mark.parametrize("only_nouns, expected", [
     (True, ['Jack']),
     (False, ['Jack', 'make', 'Jack', 'dull']),
