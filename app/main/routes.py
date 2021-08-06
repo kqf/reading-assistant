@@ -46,6 +46,10 @@ def scan():
         print(choices)
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
+    if len(words.suggestions.choices) > 0:
+        # TODO: Fix me later
+        pass
+
     return render_template(
         'scan.html',
         text_input=text_input,
