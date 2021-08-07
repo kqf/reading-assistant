@@ -50,6 +50,7 @@ def scan():
         filtered = [(w, w) for f, w in words.suggestions.choices if f < 1]
         words.suggestions.choices = filtered
 
+
     return render_template(
         'scan.html',
         text_input=text_input,
