@@ -1,10 +1,10 @@
 from flask import render_template, redirect, url_for, request
 from flask_login import login_required, login_user, logout_user
-from ..models import User
-from . import main
-from .forms import LoginForm, InputForm, SuggestionForm
+from app.models import User
+from app.main.forms import LoginForm, InputForm, SuggestionForm
 from app.settings import DEFAULT_VOCABULARY
 from assistant.find import find
+from . import main
 
 
 @main.route('/login', methods=['GET', 'POST'])
@@ -49,7 +49,6 @@ def scan():
     if len(words.suggestions.choices) > 0:
         filtered = [(w, w) for f, w in words.suggestions.choices if f < 1]
         words.suggestions.choices = filtered
-
 
     return render_template(
         'scan.html',
