@@ -47,7 +47,7 @@ def scan():
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
     if len(words.suggestions.choices) > 0:
-        filtered = [(w, w) for f, w in words.suggestions.choices if f < 1]
+        filtered = [(w, w) for f, w in words.suggestions.choices if f < 3]
         words.suggestions.choices = filtered
 
     return render_template(
