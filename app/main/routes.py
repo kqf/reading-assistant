@@ -35,8 +35,6 @@ def index():
 @login_required
 def scan():
     text_input, words = InputForm(), SuggestionForm()
-    words.suggestions.choices = []
-
     if text_input.validate_on_submit():
         choices = find(
             text_input.translation.data,
