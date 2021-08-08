@@ -27,4 +27,3 @@ class SuggestionForm(FlaskForm):
         widget=ListWidget(prefix_label=False),
         choices=[],
     )
-    filters = SubmitField('filter')
