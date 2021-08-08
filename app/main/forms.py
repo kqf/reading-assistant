@@ -24,6 +24,7 @@ class SuggestionForm(FlaskForm):
     suggestions = SelectMultipleField(
         'OOV words',
         option_widget=CheckboxInput(),
-        widget=ListWidget(prefix_label=False)
+        widget=ListWidget(prefix_label=False),
+        choices=[],
     )
     filters = SubmitField('filter')
