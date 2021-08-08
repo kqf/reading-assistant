@@ -36,11 +36,8 @@ def index():
 def scan():
     text_input, words = InputForm(), SuggestionForm()
     if text_input.validate_on_submit():
-        choices = find(
-            text_input.translation.data,
-            DEFAULT_VOCABULARY,
-            only_nouns=False
-        )
+        data = text_input.translation.data
+        choices = find(data, DEFAULT_VOCABULARY, only_nouns=False)
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
     if len(words.suggestions.choices) > 0:
