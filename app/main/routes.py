@@ -37,6 +37,7 @@ def scan():
     text_input, words = InputForm(), SuggestionForm()
     if text_input.validate_on_submit():
         data = text_input.corpus.data
+
         choices = find(data, DEFAULT_VOCABULARY, only_nouns=False)
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
