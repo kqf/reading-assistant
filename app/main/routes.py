@@ -41,10 +41,9 @@ def scan():
             DEFAULT_VOCABULARY,
             only_nouns=False
         )
-        print(choices)
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
-    if words.suggestions.choices is not None:
+    if len(words.suggestions.choices) > 0:
         selected = set(words.suggestions.data)
         filtered = [(w, w) for f, w in words.suggestions.choices
                     if w not in selected]
