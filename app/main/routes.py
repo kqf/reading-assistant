@@ -44,7 +44,7 @@ def scan():
         print(choices)
         words.suggestions.choices = [(i, x) for i, x in enumerate(choices)]
 
-    if len(words.suggestions.choices) > 0:
+    if words.suggestions.choices is not None:
         selected = set(words.suggestions.data)
         filtered = [(w, w) for f, w in words.suggestions.choices
                     if w not in selected]
