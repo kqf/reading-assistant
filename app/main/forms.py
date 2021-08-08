@@ -15,7 +15,7 @@ class LoginForm(FlaskForm):
 
 
 class InputForm(FlaskForm):
-    translation = StringField('', validators=[DataRequired()],
+    corpus = StringField('', validators=[DataRequired()],
                               render_kw={'autofocus': True})
     submit = SubmitField('submit')
 
