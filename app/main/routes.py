@@ -4,7 +4,7 @@ from app.models import User
 from app.main.forms import LoginForm, InputForm, SuggestionForm
 from app.settings import DEFAULT_VOCABULARY
 from assistant.find import find
-from app import main
+from app.main import main
 
 
 @main.route('/login', methods=['GET', 'POST'])
